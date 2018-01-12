@@ -52,7 +52,7 @@ class ViewController: UIViewController {
         NSLayoutConstraint.activate([
             colorPicker.leadingAnchor.constraint(equalTo: view.leadingAnchor, constant: 30),
             colorPicker.trailingAnchor.constraint(equalTo: view.trailingAnchor, constant: -30),
-            colorPicker.bottomAnchor.constraint(equalTo: view.safeAreaLayoutGuide.bottomAnchor, constant: -30)
+            colorPicker.bottomAnchor.constraint(equalTo: view.bottomAnchor, constant: -60)
             ])
         
     }

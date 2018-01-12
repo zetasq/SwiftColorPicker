@@ -34,8 +34,6 @@ public final class HuePicker: UIView {
         return recognizer
     }()
     
-    private var markerCenterXConstraint: NSLayoutConstraint!
-    
     public override init(frame: CGRect) {
         super.init(frame: frame)
         
@@ -54,21 +52,21 @@ public final class HuePicker: UIView {
         
         addSubview(bar)
         bar.translatesAutoresizingMaskIntoConstraints = false
+        let topInset = max(0, marker.intrinsicContentSize.height - bar.intrinsicContentSize.height) / 2
+        
         NSLayoutConstraint.activate([
             bar.leftAnchor.constraint(equalTo: self.leftAnchor, constant: marker.intrinsicContentSize.width / 2),
             bar.rightAnchor.constraint(equalTo: self.rightAnchor, constant: -marker.intrinsicContentSize.width / 2),
-            bar.centerYAnchor.constraint(equalTo: self.centerYAnchor)
+            bar.topAnchor.constraint(equalTo: self.topAnchor, constant: topInset),
+            bar.bottomAnchor.constraint(equalTo: self.bottomAnchor, constant: -topInset)
             ])
         
         addSubview(marker)
-        marker.translatesAutoresizingMaskIntoConstraints = false
-        
-        markerCenterXConstraint = marker.centerXAnchor.anchorWithOffset(to: bar.leftAnchor).constraint(equalTo: bar.widthAnchor, multiplier: -hue)
-        NSLayoutConstraint.activate([
-            marker.topAnchor.constraint(equalTo: self.topAnchor),
-            marker.bottomAnchor.constraint(equalTo: self.bottomAnchor),
-            markerCenterXConstraint
-            ])
+    }
+    
+    public override func layoutSubviews() {
+        super.layoutSubviews()
+        updateMarkerLocation()
     }
 
     public var hue: CGFloat {
@@ -78,11 +76,12 @@ public final class HuePicker: UIView {
         set {
             _hue = newValue
             updateMarkerBackground()
-            
-            markerCenterXConstraint.isActive = false
-            markerCenterXConstraint = marker.centerXAnchor.anchorWithOffset(to: bar.leftAnchor).constraint(equalTo: bar.widthAnchor, multiplier: -hue)
-            markerCenterXConstraint.isActive = true
+            updateMarkerLocation()
         }
+    }
+    
+    private func updateMarkerLocation() {
+        marker.center.x = bar.frame.minX + bar.frame.width * hue
     }
     
     private func updateMarkerBackground() {
@@ -92,7 +91,7 @@ public final class HuePicker: UIView {
     @objc
     private func gestureRecognized(_ recognizer: UIGestureRecognizer) {
         let location = recognizer.location(in: self)
-        hue = (min(bar.frame.maxX, max(bar.frame.minX, location.x)) - bar.frame.minX) / bar.frame.width
+        hue = min(bar.frame.width, max(0, location.x - bar.frame.minX)) / bar.frame.width
         delegate?.huePicker(self, didPickHue: hue)
     }
 }

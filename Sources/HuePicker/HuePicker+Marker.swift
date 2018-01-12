@@ -19,6 +19,13 @@ extension HuePicker {
             setupUI()
         }
         
+        init() {
+            super.init(frame: .zero)
+            
+            self.frame.size = self.intrinsicContentSize
+            setupUI()
+        }
+        
         required init?(coder aDecoder: NSCoder) {
             fatalError("init(coder:) has not been implemented")
         }

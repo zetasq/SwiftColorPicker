@@ -33,8 +33,6 @@ public final class BrightnessPicker: UIView {
         return recognizer
     }()
     
-    private var markerCenterXConstraint: NSLayoutConstraint!
-    
     public override init(frame: CGRect) {
         super.init(frame: frame)
         
@@ -53,21 +51,22 @@ public final class BrightnessPicker: UIView {
         
         addSubview(bar)
         bar.translatesAutoresizingMaskIntoConstraints = false
+        
+        let topInset = max(0, marker.intrinsicContentSize.height - bar.intrinsicContentSize.height) / 2
         NSLayoutConstraint.activate([
             bar.leftAnchor.constraint(equalTo: self.leftAnchor, constant: marker.intrinsicContentSize.width / 2),
             bar.rightAnchor.constraint(equalTo: self.rightAnchor, constant: -marker.intrinsicContentSize.width / 2),
-            bar.centerYAnchor.constraint(equalTo: self.centerYAnchor)
+            bar.topAnchor.constraint(equalTo: self.topAnchor, constant: topInset),
+            bar.bottomAnchor.constraint(equalTo: self.bottomAnchor, constant: -topInset)
             ])
         
         addSubview(marker)
-        marker.translatesAutoresizingMaskIntoConstraints = false
+    }
+    
+    public override func layoutSubviews() {
+        super.layoutSubviews()
         
-        markerCenterXConstraint = marker.centerXAnchor.anchorWithOffset(to: bar.leftAnchor).constraint(equalTo: bar.widthAnchor, multiplier: -color.brightness)
-        NSLayoutConstraint.activate([
-            marker.topAnchor.constraint(equalTo: self.topAnchor),
-            marker.bottomAnchor.constraint(equalTo: self.bottomAnchor),
-            markerCenterXConstraint
-            ])
+        updateMarkerLocation()
     }
     
     public var color: HSBColor {
@@ -82,16 +81,14 @@ public final class BrightnessPicker: UIView {
     }
     
     private func updateMarkerLocation() {
-        markerCenterXConstraint.isActive = false
-        markerCenterXConstraint = marker.centerXAnchor.anchorWithOffset(to: bar.leftAnchor).constraint(equalTo: bar.widthAnchor, multiplier: -color.brightness)
-        markerCenterXConstraint.isActive = true
+        marker.center.x = bar.frame.minX + bar.frame.width * color.brightness
     }
-
+    
     @objc
     private func gestureRecognized(_ recognizer: UIGestureRecognizer) {
         let location = recognizer.location(in: self)
         
-        let brightness = (min(bar.frame.maxX, max(bar.frame.minX, location.x)) - bar.frame.minX) / bar.frame.width
+        let brightness = min(bar.frame.width, max(0, location.x - bar.frame.minX)) / bar.frame.width
         _color = _color.withBrightness(brightness)
         updateMarkerLocation()
         
