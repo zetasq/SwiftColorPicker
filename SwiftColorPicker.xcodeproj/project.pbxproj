@@ -1,0 +1,67 @@
+// !$*UTF8*$!
+{
+	archiveVersion = 1;
+	classes = {
+	};
+	objectVersion = 48;
+	objects = {
+
+/* Begin PBXGroup section */
+		D43A28D9200883AC00B69F9C = {
+			isa = PBXGroup;
+			children = (
+			);
+			sourceTree = "<group>";
+		};
+/* End PBXGroup section */
+
+/* Begin PBXProject section */
+		D43A28DA200883AC00B69F9C /* Project object */ = {
+			isa = PBXProject;
+			attributes = {
+				LastUpgradeCheck = 0920;
+			};
+			buildConfigurationList = D43A28DD200883AC00B69F9C /* Build configuration list for PBXProject "SwiftColorPicker" */;
+			compatibilityVersion = "Xcode 8.0";
+			developmentRegion = en;
+			hasScannedForEncodings = 0;
+			knownRegions = (
+				en,
+			);
+			mainGroup = D43A28D9200883AC00B69F9C;
+			projectDirPath = "";
+			projectRoot = "";
+			targets = (
+			);
+		};
+/* End PBXProject section */
+
+/* Begin XCBuildConfiguration section */
+		D43A28DE200883AC00B69F9C /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+			};
+			name = Debug;
+		};
+		D43A28DF200883AC00B69F9C /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+			};
+			name = Release;
+		};
+/* End XCBuildConfiguration section */
+
+/* Begin XCConfigurationList section */
+		D43A28DD200883AC00B69F9C /* Build configuration list for PBXProject "SwiftColorPicker" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				D43A28DE200883AC00B69F9C /* Debug */,
+				D43A28DF200883AC00B69F9C /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+/* End XCConfigurationList section */
+	};
+	rootObject = D43A28DA200883AC00B69F9C /* Project object */;
+}
