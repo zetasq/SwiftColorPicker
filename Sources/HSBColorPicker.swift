@@ -79,8 +79,9 @@ public final class HSBColorPicker: UIView {
         addSubview(brightnessPicker)
         brightnessPicker.translatesAutoresizingMaskIntoConstraints = false
         NSLayoutConstraint.activate([
-            brightnessPicker.centerYAnchor.constraint(equalTo: saturationPicker.centerYAnchor),
+            brightnessPicker.topAnchor.constraint(equalTo: huePicker.bottomAnchor, constant: 15),
             brightnessPicker.leftAnchor.constraint(equalTo: saturationPicker.rightAnchor, constant: 10),
+            brightnessPicker.bottomAnchor.constraint(equalTo: self.bottomAnchor),
             brightnessPicker.rightAnchor.constraint(equalTo: self.rightAnchor, constant: -10),
             brightnessPicker.widthAnchor.constraint(equalTo: saturationPicker.widthAnchor)
             ])
