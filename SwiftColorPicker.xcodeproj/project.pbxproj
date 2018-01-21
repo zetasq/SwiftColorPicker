@@ -24,6 +24,7 @@
 		D43A299420089FBB00B69F9C /* BarMarker.swift in Sources */ = {isa = PBXBuildFile; fileRef = D43A299320089FBB00B69F9C /* BarMarker.swift */; };
 		D43A29982008A73C00B69F9C /* SaturationPicker.swift in Sources */ = {isa = PBXBuildFile; fileRef = D43A29972008A73C00B69F9C /* SaturationPicker.swift */; };
 		D43A299A2008AE7F00B69F9C /* SaturationPicker+Bar.swift in Sources */ = {isa = PBXBuildFile; fileRef = D43A29992008AE7F00B69F9C /* SaturationPicker+Bar.swift */; };
+		D4404912201466E20038001C /* NSLayoutConstraint+Priority.swift in Sources */ = {isa = PBXBuildFile; fileRef = D4404911201466E20038001C /* NSLayoutConstraint+Priority.swift */; };
 		D4BC61F62008C8BE00CF17FF /* HSBColorPicker.swift in Sources */ = {isa = PBXBuildFile; fileRef = D4BC61F52008C8BE00CF17FF /* HSBColorPicker.swift */; };
 		D4BC61F82008D9DE00CF17FF /* BrightnessPicker.swift in Sources */ = {isa = PBXBuildFile; fileRef = D4BC61F72008D9DE00CF17FF /* BrightnessPicker.swift */; };
 		D4BC61FA2008DA0D00CF17FF /* BrightnessPicker+Bar.swift in Sources */ = {isa = PBXBuildFile; fileRef = D4BC61F92008DA0D00CF17FF /* BrightnessPicker+Bar.swift */; };
@@ -82,6 +83,7 @@
 		D43A299320089FBB00B69F9C /* BarMarker.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BarMarker.swift; sourceTree = "<group>"; };
 		D43A29972008A73C00B69F9C /* SaturationPicker.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SaturationPicker.swift; sourceTree = "<group>"; };
 		D43A29992008AE7F00B69F9C /* SaturationPicker+Bar.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "SaturationPicker+Bar.swift"; sourceTree = "<group>"; };
+		D4404911201466E20038001C /* NSLayoutConstraint+Priority.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "NSLayoutConstraint+Priority.swift"; sourceTree = "<group>"; };
 		D4BC61F52008C8BE00CF17FF /* HSBColorPicker.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HSBColorPicker.swift; sourceTree = "<group>"; };
 		D4BC61F72008D9DE00CF17FF /* BrightnessPicker.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BrightnessPicker.swift; sourceTree = "<group>"; };
 		D4BC61F92008DA0D00CF17FF /* BrightnessPicker+Bar.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "BrightnessPicker+Bar.swift"; sourceTree = "<group>"; };
@@ -134,6 +136,7 @@
 				D43A299320089FBB00B69F9C /* BarMarker.swift */,
 				D4BC61F52008C8BE00CF17FF /* HSBColorPicker.swift */,
 				D4BC61FB2008EFF300CF17FF /* HSBColor.swift */,
+				D4404911201466E20038001C /* NSLayoutConstraint+Priority.swift */,
 				D43A29952008A28100B69F9C /* SaturationPicker */,
 				D43A29962008A28C00B69F9C /* BrightnessPicker */,
 				D43A299220089FA000B69F9C /* HuePicker */,
@@ -368,6 +371,7 @@
 				D43A2907200885A100B69F9C /* HuePicker.swift in Sources */,
 				D4BC61F82008D9DE00CF17FF /* BrightnessPicker.swift in Sources */,
 				D43A292920088B3F00B69F9C /* HuePicker+Marker.swift in Sources */,
+				D4404912201466E20038001C /* NSLayoutConstraint+Priority.swift in Sources */,
 				D43A29982008A73C00B69F9C /* SaturationPicker.swift in Sources */,
 				D43A290B2008865000B69F9C /* CGColorSpace+Extension.swift in Sources */,
 				D4BC61FA2008DA0D00CF17FF /* BrightnessPicker+Bar.swift in Sources */,

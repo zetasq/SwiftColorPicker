@@ -57,8 +57,8 @@ public final class HuePicker: UIView {
         NSLayoutConstraint.activate([
             bar.leftAnchor.constraint(equalTo: self.leftAnchor, constant: marker.intrinsicContentSize.width / 2),
             bar.rightAnchor.constraint(equalTo: self.rightAnchor, constant: -marker.intrinsicContentSize.width / 2),
-            bar.topAnchor.constraint(equalTo: self.topAnchor, constant: topInset),
-            bar.bottomAnchor.constraint(equalTo: self.bottomAnchor, constant: -topInset)
+            bar.topAnchor.constraint(equalTo: self.topAnchor, constant: topInset).priority(.defaultHigh),
+            bar.bottomAnchor.constraint(equalTo: self.bottomAnchor, constant: -topInset).priority(.defaultHigh)
             ])
         
         addSubview(marker)
