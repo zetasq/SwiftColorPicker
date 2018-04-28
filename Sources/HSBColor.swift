@@ -9,13 +9,13 @@ import UIKit
 
 public struct HSBColor {
     
-    var hue: CGFloat
+    public var hue: CGFloat
     
-    var saturation: CGFloat
+    public var saturation: CGFloat
     
-    var brightness: CGFloat
+    public var brightness: CGFloat
     
-    var alpha: CGFloat
+    public var alpha: CGFloat
 
     public var uiColor: UIColor {
         return UIColor(hue: hue, saturation: saturation, brightness: brightness, alpha: alpha)
